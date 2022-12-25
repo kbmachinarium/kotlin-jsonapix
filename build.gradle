@@ -6,9 +6,7 @@ buildscript {
     }
 
     apply from: "dependencies.gradle"
-    apply from: "maven.gradle"
     apply from: "config.gradle"
-    apply from: "deploy.gradle"
 
     dependencies {
         classpath packages.gradle
@@ -17,7 +15,6 @@ buildscript {
         classpath packages.detekt.plugin
         classpath packages.ktlint.plugin
         classpath packages.hilt.plugin
-        classpath packages.dokka.plugin
     }
 }
 
