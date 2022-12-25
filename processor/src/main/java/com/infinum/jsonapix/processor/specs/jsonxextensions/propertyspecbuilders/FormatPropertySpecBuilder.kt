@@ -12,6 +12,7 @@ internal object FormatPropertySpecBuilder {
             .addStatement("%T {", Json::class)
             .indent()
             .addStatement(JsonApiConstants.Statements.ENCODE_DEFAULTS)
+            .addStatement(JsonApiConstants.Statements.EXPLICIT_NULLS)
             .addStatement(
                 JsonApiConstants.Statements.CLASS_DISCRIMINATOR_FORMAT,
                 JsonApiConstants.CLASS_DISCRIMINATOR_KEY

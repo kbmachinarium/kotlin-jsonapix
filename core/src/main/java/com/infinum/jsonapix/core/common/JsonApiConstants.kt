@@ -134,6 +134,7 @@ object JsonApiConstants {
 
     object Statements {
         const val ENCODE_DEFAULTS = "encodeDefaults = true"
+        const val EXPLICIT_NULLS = "explicitNulls = false"
         const val IGNORE_UNKNOWN_KEYS = "ignoreUnknownKeys = true"
         const val CLASS_DISCRIMINATOR_FORMAT = "classDiscriminator = %S"
         const val SERIALIZERS_MODULE_FORMAT = "serializersModule = %L"
