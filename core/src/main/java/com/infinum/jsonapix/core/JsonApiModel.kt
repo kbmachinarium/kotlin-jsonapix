@@ -9,7 +9,7 @@ import com.infinum.jsonapix.core.resources.Meta
 @Suppress("UNCHECKED_CAST", "TooManyFunctions", "UnnecessaryAbstractClass")
 abstract class JsonApiModel {
     private var type: String? = null
-    private var id: String? = "0"
+    private var id: String? = null
     private var rootLinks: Links? = null
     private var resourceLinks: Links? = null
     private var relationshipLinks: Map<String, Links?>? = null

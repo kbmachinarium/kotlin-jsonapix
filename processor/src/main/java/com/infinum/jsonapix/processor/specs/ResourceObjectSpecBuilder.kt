@@ -276,7 +276,7 @@ internal object ResourceObjectSpecBuilder {
 
     private fun idParam(): ParameterSpec = ParameterSpec.builder(
         JsonApiConstants.Keys.ID, String::class
-    ).defaultValue("%S", "0")
+    ).defaultValue("%S", "null")
         .build()
 
     private fun typeProperty(): PropertySpec = PropertySpec.builder(

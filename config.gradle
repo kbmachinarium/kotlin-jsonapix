@@ -7,7 +7,7 @@ ext {
     ]
     releaseConfig = [
             "group"      : "kotlin-jsonapix",
-            "version"    : "1.0.0-beta04",
+            "version"    : "1.0.0-beta05",
             "versionCode": 0 * 10000 + 0 * 100 + 5
     ]
 }
