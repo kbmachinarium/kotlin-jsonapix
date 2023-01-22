@@ -19,14 +19,14 @@ internal object ManyRelationshipModelFunSpecBuilder {
             .receiver(Collection::class.asClassName().parameterizedBy(typeVariableName))
             .returns(ManyRelationshipMember::class)
             .addModifiers(KModifier.INLINE)
-            .addTypeVariable(typeVariableName.copy(reified = true))
+            .addTypeVariable(typeVariableName.copy(reified = true, nullable = true))
             .addParameter("type", String::class)
             .addParameter(
                 ParameterSpec.builder(
                     "idMapper",
                     Function1::class.asClassName()
                         .parameterizedBy(typeVariableName, String::class.asClassName())
-                ).defaultValue("{ \"\" }").build()
+                ).defaultValue("{ \"\" }", null).build()
             )
             .addStatement(
                 "return %T(data = map { %T(type, idMapper(it)) })",

@@ -268,16 +268,17 @@ internal object ResourceObjectSpecBuilder {
         return builder.addCode(codeBlockBuilder.build().toString()).build()
     }
 
-    private fun idProperty(): PropertySpec = PropertySpec.builder(
-        JsonApiConstants.Keys.ID, String::class, KModifier.OVERRIDE
-    ).addAnnotation(Specs.getSerialNameSpec(JsonApiConstants.Keys.ID))
-        .initializer(JsonApiConstants.Keys.ID)
-        .build()
+    private fun idProperty(): PropertySpec = Specs.getNullPropertySpec(
+        JsonApiConstants.Keys.ID,
+        String::class.asClassName()
+            .copy(nullable = true)
+    )
 
-    private fun idParam(): ParameterSpec = ParameterSpec.builder(
-        JsonApiConstants.Keys.ID, String::class
-    ).defaultValue("%S", "null")
-        .build()
+    private fun idParam(): ParameterSpec = Specs.getNamedParamSpec(
+        String::class.asClassName(),
+        JsonApiConstants.Keys.ID,
+        nullable = true
+    )
 
     private fun typeProperty(): PropertySpec = PropertySpec.builder(
         JsonApiConstants.Keys.TYPE, String::class, KModifier.OVERRIDE
